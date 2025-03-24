@@ -185,25 +185,19 @@ footer {
 }
 
 .footer-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 40px 80px;
-    text-align: left;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px;
+    text-align: left; 
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) { 
     .footer-container {
-        flex-direction: column;
-        text-align: center;
-        padding: 20px;
-    }
-    .copyright-section {
-        margin-top: 20px;
-        text-align: center;
+        display: flex;
+        justify-content: space-between;
     }
 }
+
 
 .footer-logo {
     width: 30px;
