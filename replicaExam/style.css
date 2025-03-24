@@ -3,6 +3,9 @@ body {
     margin: 0;
     padding: 0;
     background-color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 header {
@@ -14,17 +17,16 @@ header {
     color: white;
 }
 .request-btn {
-    background-color: black; /* Black background */
+    background-color: black; 
     color: white;
-    border: 1px solid white; /* White border */
-    border-radius: 5px;
+    border: 1px solid white;
     padding: 5px 20px;
     cursor: pointer;
     margin-left: 5px;
 }
 
 .sign-in-btn {
-    background-color: #6C63FF; /* Blue background */
+    background-color: #6C63FF;
     color: white;
     border: none;
     border-radius: 5px;
@@ -33,7 +35,7 @@ header {
     margin-left: 5px;
 }
 
-/* Button Hover Effects */
+
 .request-btn:hover {
     background-color: white;
     color: black;
@@ -41,7 +43,7 @@ header {
 }
 
 .sign-in-btn:hover {
-    background-color: #5a52e0; /* Slightly darker blue */
+    background-color: #5a52e0; 
 }
 
 
@@ -52,11 +54,12 @@ header {
     vertical-align: middle;
 }
 
-/* --- SEARCH SECTION --- */
+
 .search-section {
     text-align: center;
-    padding: 40px;
+    padding: 50px;
     background-color: #D9D9F3;
+    flex-grow: 1;
 }
 
 .search-box {
@@ -87,19 +90,18 @@ header {
     cursor: pointer;
 }
 
-/* --- GRID CONTAINER FOR IMAGES & TEXT --- */
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Always 2 columns */
+    grid-template-columns: repeat(2, 1fr); 
     gap: 20px;
     padding: 40px;
-    justify-content: center; /* Centers content */
+    justify-content: center;
+    flex-grow: 1; 
 }
 
-/* Responsive: Stack cards on small screens */
 @media (max-width: 768px) {
     .grid-container {
-        grid-template-columns: 1fr; /* Stack into 1 column on small screens */
+        grid-template-columns: 1fr; 
     }
 }
 
@@ -112,16 +114,16 @@ header {
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     height: 100%;
-    border: none; /* Removes the card border */
-    box-shadow: none; /* Removes any shadow that looks like a border */ /* Forces all cards to be the same height */
+    border: none; 
+    box-shadow: none; 
 }
 
-/* Ensure card-content takes up the full height */
+
 .card-content {
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centers the text properly */
-    gap: 8px; /* Adds consistent spacing between elements */
+    justify-content: center; 
+    gap: 8px; 
     height: 100%;
 }
 
@@ -135,14 +137,14 @@ header {
 card h2 {
     margin: 0;
     font-size: 18px;
-    line-height: 1.4; /* Improves readability */
+    line-height: 1.4; 
 }
 
 .card p {
     margin: 0;
     color: #666;
     font-size: 14px;
-    line-height: 1.5; /* Ensures text is evenly spaced */
+    line-height: 1.5; 
 }
 
 .learn-more {
@@ -155,26 +157,26 @@ card h2 {
     text-decoration: underline;
 }
 
-/* --- RESPONSIVE DESIGN (Keep Images on Left on Phones) --- */
+
 @media (max-width: 768px) {
     .grid-container {
-        grid-template-columns: 1fr; /* Stack items but keep image on left */
+        grid-template-columns: 1fr; 
         padding: 20px;
     }
 
     .card {
-        flex-direction: row; /* Ensures image stays on left */
+        flex-direction: row; 
         align-items: center;
         text-align: left;
     }
 
     .card img {
-        width: 40px; /* Slightly smaller for mobile */
+        width: 40px; 
         margin-right: 10px;
     }
 }
 
-/* --- FOOTER --- */
+
 footer {
     background-color: black;
     color: white;
@@ -188,6 +190,7 @@ footer {
     justify-content: space-between;
     align-items: flex-start;
     padding: 40px 80px;
+    text-align: left;
 }
 
 @media (max-width: 768px) {
