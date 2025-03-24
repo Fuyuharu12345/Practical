@@ -1,2 +1,2 @@
 # Practical
-b--CarlCydrixDelaPiedra--BSIT
+by CarlCydrixDelaPiedra BSIT
