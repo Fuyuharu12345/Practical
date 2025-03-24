@@ -13,20 +13,10 @@ header {
     background-color: black;
     color: white;
 }
-.logo {
-    width: 38px;  
-    height: auto;
-    margin-right: 0px; 
-    vertical-align: middle;
-}
-
-.header-title {
-    font-size: 20px;
-}
 .request-btn {
-    background-color: black;
+    background-color: black; /* Black background */
     color: white;
-    border: 1px solid #ccc;
+    border: 1px solid white; /* White border */
     border-radius: 5px;
     padding: 5px 20px;
     cursor: pointer;
@@ -34,7 +24,7 @@ header {
 }
 
 .sign-in-btn {
-    background-color: #6C63FF; 
+    background-color: #6C63FF; /* Blue background */
     color: white;
     border: none;
     border-radius: 5px;
@@ -42,51 +32,77 @@ header {
     cursor: pointer;
     margin-left: 5px;
 }
-.search-section h1 {
-    font-size: 2.5rem; 
-    font-weight: bold;
+
+/* Button Hover Effects */
+.request-btn:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
 }
 
+.sign-in-btn:hover {
+    background-color: #5a52e0; /* Slightly darker blue */
+}
+
+
+.logo {
+    width: 38px;  
+    height: auto;
+    margin-right: 0px; 
+    vertical-align: middle;
+}
+
+/* --- SEARCH SECTION --- */
 .search-section {
     text-align: center;
-    padding: 60px;
+    padding: 40px;
     background-color: #D9D9F3;
 }
-.search-container {
-    position: relative;
-    display: inline-block;
+
+.search-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 50%;
+    margin: 0 auto;
+    position: relative;
 }
 
 .search-input {
-    width: 95%; 
+    width: 100%;
+    max-width: 450px;
     padding: 10px;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-    padding-right: 40px;
 }
 
-
-.search-icon {
+.search-btn {
     position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
+    right: 10px;
+    background: none;
+    border: none;
     font-size: 18px;
-    color: #666;
     cursor: pointer;
-    pointer-events: none;
 }
 
-
+/* --- GRID CONTAINER FOR IMAGES & TEXT --- */
 .grid-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr); /* Always 2 columns */
     gap: 20px;
     padding: 40px;
+    justify-content: center; /* Centers content */
 }
+
+/* Responsive: Stack cards on small screens */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr; /* Stack into 1 column on small screens */
+    }
+}
+
 
 .card {
     display: flex;
@@ -94,8 +110,21 @@ header {
     background: white;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    border: none; /* Removes the card border */
+    box-shadow: none; /* Removes any shadow that looks like a border */ /* Forces all cards to be the same height */
 }
+
+/* Ensure card-content takes up the full height */
+.card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers the text properly */
+    gap: 8px; /* Adds consistent spacing between elements */
+    height: 100%;
+}
+
 
 .card img {
     width: 50px;
@@ -103,19 +132,20 @@ header {
     margin-right: 15px;
 }
 
-.card h2 {
+card h2 {
     margin: 0;
     font-size: 18px;
+    line-height: 1.4; /* Improves readability */
 }
 
 .card p {
-    margin: 5px 0 0;
+    margin: 0;
     color: #666;
+    font-size: 14px;
+    line-height: 1.5; /* Ensures text is evenly spaced */
 }
 
 .learn-more {
-    display: inline-block;
-    margin-top: 10px;
     color: #6C63FF;
     text-decoration: none;
     font-weight: bold;
@@ -125,6 +155,26 @@ header {
     text-decoration: underline;
 }
 
+/* --- RESPONSIVE DESIGN (Keep Images on Left on Phones) --- */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr; /* Stack items but keep image on left */
+        padding: 20px;
+    }
+
+    .card {
+        flex-direction: row; /* Ensures image stays on left */
+        align-items: center;
+        text-align: left;
+    }
+
+    .card img {
+        width: 40px; /* Slightly smaller for mobile */
+        margin-right: 10px;
+    }
+}
+
+/* --- FOOTER --- */
 footer {
     background-color: black;
     color: white;
@@ -134,26 +184,29 @@ footer {
 
 .footer-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-start;
-    background-color: black;
-    color: white;
     padding: 40px 80px;
-    text-align: left;
-    font-size: 11px;
 }
 
-.copyright-section {
-    margin-top: 130px; 
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+    .copyright-section {
+        margin-top: 20px;
+        text-align: center;
+    }
 }
-.copyright-section img {
-    width: 38px; 
-    height: auto;
+
+.footer-logo {
+    width: 30px;
+    margin-right: 10px;
 }
 
 .copyright {
-    font-size: 13px;
-    line-height: 1.5;
+    font-size: 12px;
 }
-
-
